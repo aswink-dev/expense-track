@@ -20,8 +20,6 @@ export default function ExpenseChart({ data = [] }) {
       className="
         rounded-2xl
         bg-[#f7f1e8]
-        border
-        border-gray-200
         p-6
         hover:shadow-md
         shadow-sm

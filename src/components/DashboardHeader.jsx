@@ -75,12 +75,10 @@ export default function DashboardHeader({ user }) {
 
       {/* Decorative Line */}
 
-      <div className="mt-6 flex items-center gap-3">
-        <div className="h-1 w-12 rounded-full bg-blue-500" />
-
-        <div className="h-1 w-3 rounded-full bg-blue-300 dark:bg-blue-800" />
-
-        <div className="h-1 w-2 rounded-full bg-blue-200 dark:bg-blue-900" />
+      {/* Decorative Accent */}
+      <div className="mt-6 flex items-center gap-1.5">
+        <div className="h-1.5 w-25 rounded-full bg-blue-500" />
+        <div className="h-1.5 w-5 rounded-full bg-green-500" />
       </div>
     </div>
   );

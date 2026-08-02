@@ -102,6 +102,7 @@ export default function ProfileMenu({ user }) {
         className="
     flex
     w-full
+    h-10
     items-center
     gap-3
     rounded-xl
@@ -118,7 +119,7 @@ export default function ProfileMenu({ user }) {
     md:w-auto
   "
       >
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500 text-sm font-bold text-white">
           {user.name?.charAt(0).toUpperCase() || "U"}
         </div>
 

@@ -18,8 +18,8 @@ export default function ThemeToggle() {
       <div
         className="
           flex
-          h-13
-          w-13
+          h-10
+          w-10
           items-center
           justify-center
           rounded-xl
@@ -42,8 +42,8 @@ export default function ThemeToggle() {
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       className="
         flex
-        h-13
-        w-13
+        h-10
+        w-10
         items-center
         justify-center
         rounded-xl

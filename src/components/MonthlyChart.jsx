@@ -15,8 +15,6 @@ export default function MonthlyChart({ data = [] }) {
     <motion.div
       className="
         rounded-2xl
-        border
-        border-gray-200
        bg-[#f7f1e8] dark:bg-neutral-900
         p-6
         shadow-sm

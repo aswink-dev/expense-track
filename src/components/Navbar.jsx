@@ -7,7 +7,6 @@ import { Menu, X } from "lucide-react";
 import ProfileMenu from "./ProfileMenu";
 import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "./AuthProvider";
-import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,48 +14,30 @@ export default function Navbar() {
   const { user, loading } = useAuth();
 
   return (
-    <nav
-      className="
-        sticky
-        top-0
-        z-40
-        border-b
-        border-gray-200/60
-        bg-[#f7f1e8]/95
-        backdrop-blur
-        dark:border-gray-800
-        dark:bg-neutral-950/95
-      "
-    >
-      <div
-        className="
-          mx-auto
-          flex
-          h-20
-          max-w-7xl
-          items-center
-          justify-between
-          px-6
-          lg:px-8
-        "
-      >
+    <nav className="relative z-50 border-b border-gray-200/60 bg-[#f7f1e8] dark:border-gray-800 dark:bg-neutral-950">
+      {/* Navbar Container */}
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-
-        <div className="flex items-center gap-3">
+        <Link
+          href="/"
+          className="flex items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
           <img
             src="/logo.png"
-            alt=""
+            alt="ExpenseTrack"
             className="h-15 w-15 object-contain"
           />
+
           <span className="text-2xl font-black tracking-tight">
             <span className="text-blue-500">Expense</span>
             <span className="text-green-500">Track</span>
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
-
         <div className="hidden items-center gap-4 md:flex">
+          {/* Home - Always Visible */}
           <Link
             href="/"
             className="
@@ -77,28 +58,30 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link
-            href="/dashboard"
-            className="
-              rounded-xl
-              px-4
-              py-2
-              text-sm
-              font-semibold
-              text-gray-600
-              transition
-              hover:bg-black/5
-              hover:text-gray-900
-              dark:text-gray-400
-              dark:hover:bg-white/5
-              dark:hover:text-white
-            "
-          >
-            Dashboard
-          </Link>
+          {/* Dashboard - Only Logged In */}
+          {user && (
+            <Link
+              href="/dashboard"
+              className="
+                rounded-xl
+                px-4
+                py-2
+                text-sm
+                font-semibold
+                text-gray-600
+                transition
+                hover:bg-black/5
+                hover:text-gray-900
+                dark:text-gray-400
+                dark:hover:bg-white/5
+                dark:hover:text-white
+              "
+            >
+              Dashboard
+            </Link>
+          )}
 
           {/* Profile */}
-
           {loading ? (
             <div
               className="
@@ -113,11 +96,12 @@ export default function Navbar() {
           ) : (
             <ProfileMenu user={user} />
           )}
-          <ThemeToggle />
+
+          {/* Theme Toggle - Only Logged In */}
+           <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
@@ -146,7 +130,6 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-
       {open && (
         <div
           className="
@@ -161,8 +144,8 @@ export default function Navbar() {
           "
         >
           {/* Navigation Links */}
-
           <div className="space-y-2">
+            {/* Home - Always Visible */}
             <Link
               href="/"
               onClick={() => setOpen(false)}
@@ -183,29 +166,31 @@ export default function Navbar() {
               Home
             </Link>
 
-            <Link
-              href="/dashboard"
-              onClick={() => setOpen(false)}
-              className="
-                block
-                rounded-2xl
-                px-4
-                py-3
-                text-sm
-                font-semibold
-                text-gray-700
-                transition
-                hover:bg-black/5
-                dark:text-gray-300
-                dark:hover:bg-white/5
-              "
-            >
-              Dashboard
-            </Link>
+            {/* Dashboard - Only Logged In */}
+            {user && (
+              <Link
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                className="
+                  block
+                  rounded-2xl
+                  px-4
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-gray-700
+                  transition
+                  hover:bg-black/5
+                  dark:text-gray-300
+                  dark:hover:bg-white/5
+                "
+              >
+                Dashboard
+              </Link>
+            )}
           </div>
 
           {/* Bottom Controls */}
-
           <div
             className="
               mt-5
@@ -219,11 +204,9 @@ export default function Navbar() {
             "
           >
             {/* Profile */}
-
             {!loading && <ProfileMenu user={user} />}
 
-            {/* Theme Toggle - Last */}
-
+            {/* Theme Toggle - Only Logged In */}
             <ThemeToggle />
           </div>
         </div>

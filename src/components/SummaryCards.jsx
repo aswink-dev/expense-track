@@ -169,13 +169,9 @@ export default function SummaryCards({ expenses = [] }) {
               </div>
 
               {/* Decorative Accent */}
-
-              <div className="mt-6 flex items-center gap-2">
-                <div className="h-1 w-8 rounded-full bg-blue-500" />
-
-                <div className="h-1 w-2 rounded-full bg-blue-300 dark:bg-blue-800" />
-
-                <div className="h-1 w-1 rounded-full bg-blue-200 dark:bg-blue-900" />
+              <div className="mt-6 flex items-center gap-1.5">
+                <div className="h-1.5 w-12 rounded-full bg-blue-500" />
+                <div className="h-1.5 w-3 rounded-full bg-green-500" />
               </div>
             </div>
           </AnimatedCard>
