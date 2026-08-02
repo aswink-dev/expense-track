@@ -1,0 +1,42 @@
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+import { Toaster } from "sonner";
+import ThemeProvider from "@/components/ThemeProvider";
+import AuthProvider from "@/components/AuthProvider";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata = {
+  title: "Expense Manager | Track Your Money",
+  description:
+    "A beautiful personal finance dashboard to track expenses, manage spending, and build better money habits.",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
+      <body>
+        <ThemeProvider>
+          <AuthProvider>
+            {children}
+
+            <Toaster position="top-right" richColors />
+          </AuthProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

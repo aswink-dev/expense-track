@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ================================
+   Base
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8f7f4;
+  color: #171717;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* ================================
+   Dark Mode
+================================ */
+
+.dark body {
+  background: #080d18;
+  color: #f9fafb;
+}
+
+/* ================================
+   Selection
+================================ */
+
+::selection {
+  background: #111827;
+  color: white;
+}
+
+.dark ::selection {
+  background: white;
+  color: #111827;
+}
+
+/* ================================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
