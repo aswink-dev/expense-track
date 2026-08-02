@@ -9,8 +9,6 @@ export default function DashboardPreview({ user }) {
 
   useEffect(() => {
     if (!user) {
-      setExpenses([]);
-      setStats(null);
       return;
     }
 

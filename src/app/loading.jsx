@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 export default function Loading() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f7f1e8] px-6 dark:bg-neutral-950">
       <div className="flex flex-col items-center text-center">
         <div className="animate-pulse">
-          <img
-            src="/logo.png"   
+          <Image
+            src="/logo.png"
             alt="ExpenseTrack"
+            width={80}
+            height={80}
             className="w-64 object-contain"
           />
         </div>

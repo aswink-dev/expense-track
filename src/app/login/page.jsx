@@ -299,7 +299,7 @@ export default function LoginPage() {
               dark:text-gray-400
             "
           >
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/register"
               className="

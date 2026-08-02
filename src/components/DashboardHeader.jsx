@@ -64,7 +64,7 @@ export default function DashboardHeader({ user }) {
           dark:text-gray-400
         "
       >
-        Here's an overview of your spending. Track your expenses, understand
+        Here&apos;s an overview of your spending. Track your expenses, understand
         your habits, and stay in control of your financial goals.
       </p>
 

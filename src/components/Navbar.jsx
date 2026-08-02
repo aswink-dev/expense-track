@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import ProfileMenu from "./ProfileMenu";
 import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "./AuthProvider";
+import Image from "next/image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -21,9 +22,11 @@ export default function Navbar() {
           className="flex items-center gap-3"
           onClick={() => setOpen(false)}
         >
-          <img
+          <Image
             src="/logo.png"
             alt="ExpenseTrack"
+            width={60}
+            height={60}
             className="h-15 w-15 object-contain"
           />
 

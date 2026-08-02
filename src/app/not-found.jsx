@@ -25,8 +25,8 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-gray-500 dark:text-gray-400">
-          The page you're looking for doesn't exist or may have been moved.
-          Let's get you back to your financial dashboard.
+          The page you&apos;re looking for doesn&apos;t exist or may have been moved.
+          Let&apos;s get you back to your financial dashboard.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
