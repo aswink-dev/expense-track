@@ -16,9 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Expense Manager | Track Your Money",
-  description:
-    "A beautiful personal finance dashboard to track expenses, manage spending, and build better money habits.",
+  title: "ExpenseTrack",
+  description: "Track your expenses and manage your personal finances.",
 };
 
 export default function RootLayout({ children }) {
