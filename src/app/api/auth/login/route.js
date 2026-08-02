@@ -7,18 +7,14 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   try {
     await connectDB();
-
     const { email, password } = await request.json();
 
-    // Validate input
     if (!email || !password) {
       return Response.json(
         { message: "Email and password are required" },
         { status: 400 },
       );
     }
-
-    // Find user
     const user = await User.findOne({
       email: email.toLowerCase(),
     });
@@ -29,8 +25,6 @@ export async function POST(request) {
         { status: 401 },
       );
     }
-
-    // Compare password
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
 
     if (!isPasswordCorrect) {
@@ -39,14 +33,10 @@ export async function POST(request) {
         { status: 401 },
       );
     }
-
-    // Generate JWT
     const token = signToken({
       id: user._id,
       email: user.email,
     });
-
-    // Create response
     const response = NextResponse.json({
       success: true,
       message: "Login successful",
@@ -56,19 +46,15 @@ export async function POST(request) {
         email: user.email,
       },
     });
-
-    // Store token in HTTP-only cookie
     response.cookies.set("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
+      maxAge: 60 * 60 * 24 * 7,
       path: "/",
     });
-
     return response;
   } catch (error) {
-    console.error("LOGIN ERROR:", error);
 
     return Response.json(
       {

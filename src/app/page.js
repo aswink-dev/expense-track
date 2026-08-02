@@ -10,11 +10,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#f7f1e8] dark:bg-neutral-950">
-      {/* Navbar */}
 
       <Navbar />
-
-      {/* Hero Section */}
 
       <section
         className="
@@ -32,10 +29,8 @@ export default function Home() {
           lg:py-28
         "
       >
-        {/* Left Content */}
 
         <div>
-          {/* Badge */}
 
           <div
             className="
@@ -60,8 +55,6 @@ export default function Home() {
             Your personal finance companion
           </div>
 
-          {/* Heading */}
-
           <h1
             className="
               max-w-2xl
@@ -81,8 +74,6 @@ export default function Home() {
             </span>
           </h1>
 
-          {/* Description */}
-
           <p
             className="
               mt-6
@@ -96,8 +87,6 @@ export default function Home() {
             Track expenses, understand your spending, and build better
             financial habits with a beautiful personal finance dashboard.
           </p>
-
-          {/* Authentication Buttons */}
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             {loading ? (
@@ -186,8 +175,6 @@ export default function Home() {
             )}
           </div>
 
-          {/* Benefits */}
-
           <div
             className="
               mt-8
@@ -218,10 +205,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Dashboard Preview */}
 
         <div className="relative">
-          {/* Background Glow */}
 
           <div
             className="
@@ -234,8 +219,6 @@ export default function Home() {
               dark:bg-blue-900/20
             "
           />
-
-          {/* Preview Card */}
 
           <div
             className="

@@ -56,7 +56,6 @@ export default function AddExpensePage() {
         toast.error(data.message || "Failed to add expense");
       }
     } catch (error) {
-      console.error(error);
       toast.error("Something went wrong");
     } finally {
       setLoading(false);
@@ -66,7 +65,6 @@ export default function AddExpensePage() {
   return (
     <main className="min-h-screen bg-[#f7f1e8] dark:bg-neutral-950 px-6 py-10 ">
       <div className="mx-auto max-w-3xl">
-        {/* Back Button */}
 
         <Link
           href="/dashboard"
@@ -95,8 +93,6 @@ export default function AddExpensePage() {
           Back to Dashboard
         </Link>
 
-        {/* Main Card */}
-
         <div
           className="
             overflow-hidden
@@ -110,7 +106,6 @@ export default function AddExpensePage() {
             dark:shadow-none
           "
         >
-          {/* Header */}
 
           <div
             className="
@@ -158,10 +153,8 @@ export default function AddExpensePage() {
             </div>
           </div>
 
-          {/* Form */}
 
           <form onSubmit={handleSubmit} className="space-y-6 p-6 sm:p-8">
-            {/* Title + Amount */}
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -233,7 +226,6 @@ export default function AddExpensePage() {
               </div>
             </div>
 
-            {/* Category + Date */}
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -311,8 +303,6 @@ export default function AddExpensePage() {
               </div>
             </div>
 
-            {/* Note */}
-
             <div>
               <label className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Note
@@ -347,7 +337,6 @@ export default function AddExpensePage() {
               />
             </div>
 
-            {/* Buttons */}
 
             <div
               className="

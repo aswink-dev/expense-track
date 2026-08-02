@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { verifyToken } from "@/lib/jwt";
 
 export function proxy(request) {
-  console.log("🔥🔥 PROXY IS RUNNING");
 
   const token = request.cookies.get("token")?.value;
 

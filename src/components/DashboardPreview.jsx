@@ -8,7 +8,6 @@ export default function DashboardPreview({ user }) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Don't fetch private data for logged-out users
     if (!user) {
       setExpenses([]);
       setStats(null);
@@ -39,7 +38,6 @@ export default function DashboardPreview({ user }) {
           setStats(statsData.stats || null);
         }
       } catch (error) {
-        console.error("Failed to load dashboard preview:", error);
       } finally {
         setLoading(false);
       }
@@ -48,7 +46,6 @@ export default function DashboardPreview({ user }) {
     loadDashboardData();
   }, [user]);
 
-  // Logged-in user loading their data
   if (user && loading) {
     return (
       <div
@@ -76,7 +73,7 @@ export default function DashboardPreview({ user }) {
     );
   }
 
-  // Logged-out demo data
+
   if (!user) {
     return (
       <PreviewCard
@@ -101,7 +98,7 @@ export default function DashboardPreview({ user }) {
     );
   }
 
-  // Logged-in user with no expenses
+
   if (expenses.length === 0) {
     return (
       <div className="py-8 text-center">
@@ -133,13 +130,12 @@ export default function DashboardPreview({ user }) {
     );
   }
 
-  // Calculate total from actual expenses
+
   const total = expenses.reduce(
     (sum, expense) => sum + Number(expense.amount || 0),
     0,
   );
 
-  // Show latest 2 expenses
   const recentExpenses = expenses.slice(0, 2);
 
   return (
@@ -169,7 +165,6 @@ function PreviewCard({ title, amount, expenses, percentage }) {
         dark:shadow-none
       "
     >
-      {/* Header */}
 
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -199,11 +194,8 @@ function PreviewCard({ title, amount, expenses, percentage }) {
         </div>
       </div>
 
-      {/* Divider */}
 
       <div className="mt-6 border-t border-gray-200/70 dark:border-neutral-800" />
-
-      {/* Expenses */}
 
       <div className="mt-6 space-y-3">
         {expenses.map((expense, index) => (
@@ -256,8 +248,6 @@ function PreviewCard({ title, amount, expenses, percentage }) {
           </div>
         ))}
       </div>
-
-      {/* Progress */}
 
       <div className="mt-7">
         <div className="mb-2 flex items-center justify-between text-sm">

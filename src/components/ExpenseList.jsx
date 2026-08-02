@@ -22,7 +22,6 @@ export default function ExpenseList({ expenses = [], setExpenses }) {
           setExpenses(data.expenses || []);
         }
       } catch (error) {
-        console.error("Failed to fetch expenses:", error);
       } finally {
         setLoading(false);
       }
@@ -31,7 +30,6 @@ export default function ExpenseList({ expenses = [], setExpenses }) {
     fetchExpenses();
   }, [setExpenses]);
 
-  // Loading state
   if (loading) {
     return (
       <div className="space-y-4">
@@ -52,7 +50,6 @@ export default function ExpenseList({ expenses = [], setExpenses }) {
     );
   }
 
-  // Empty state
   if (expenses.length === 0) {
     return (
       <EmptyState
@@ -63,7 +60,6 @@ export default function ExpenseList({ expenses = [], setExpenses }) {
     );
   }
 
-  // Expense list
   return (
     <div className="space-y-4">
       {expenses.map((expense) => (

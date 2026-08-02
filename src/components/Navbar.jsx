@@ -15,9 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="relative z-50 border-b border-gray-200/60 bg-[#f7f1e8] dark:border-gray-800 dark:bg-neutral-950">
-      {/* Navbar Container */}
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-        {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-3"
@@ -35,9 +33,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden items-center gap-4 md:flex">
-          {/* Home - Always Visible */}
           <Link
             href="/"
             className="
@@ -58,7 +54,6 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* Dashboard - Only Logged In */}
           {user && (
             <Link
               href="/dashboard"
@@ -81,7 +76,6 @@ export default function Navbar() {
             </Link>
           )}
 
-          {/* Profile */}
           {loading ? (
             <div
               className="
@@ -97,11 +91,9 @@ export default function Navbar() {
             <ProfileMenu user={user} />
           )}
 
-          {/* Theme Toggle - Only Logged In */}
-           <ThemeToggle />
+          <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
@@ -129,7 +121,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <div
           className="
@@ -143,9 +134,7 @@ export default function Navbar() {
             md:hidden
           "
         >
-          {/* Navigation Links */}
           <div className="space-y-2">
-            {/* Home - Always Visible */}
             <Link
               href="/"
               onClick={() => setOpen(false)}
@@ -166,7 +155,6 @@ export default function Navbar() {
               Home
             </Link>
 
-            {/* Dashboard - Only Logged In */}
             {user && (
               <Link
                 href="/dashboard"
@@ -190,7 +178,6 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Bottom Controls */}
           <div
             className="
               mt-5
@@ -203,10 +190,7 @@ export default function Navbar() {
               dark:border-gray-800
             "
           >
-            {/* Profile */}
             {!loading && <ProfileMenu user={user} />}
-
-            {/* Theme Toggle - Only Logged In */}
             <ThemeToggle />
           </div>
         </div>

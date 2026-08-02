@@ -2,7 +2,6 @@ import connectDB from "@/lib/mongodb";
 import Expense from "@/models/Expense";
 import { getCurrentUser } from "@/lib/auth";
 
-// GET Single Expense
 export async function GET(request, { params }) {
   try {
     await connectDB();
@@ -51,7 +50,6 @@ export async function GET(request, { params }) {
   }
 }
 
-// UPDATE Expense
 export async function PUT(request, { params }) {
   const { id } = await params;
   try {
@@ -109,15 +107,12 @@ export async function PUT(request, { params }) {
   }
 }
 
-// DELETE Expense
 export async function DELETE(request, { params }) {
   const { id } = await params;
   try {
     await connectDB();
 
     const user = await getCurrentUser();
-    console.log("DELETE EXPENSE ID:", id);
-    console.log("CURRENT USER:", user);
 
     if (!user) {
       return Response.json(

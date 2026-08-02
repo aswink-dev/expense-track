@@ -48,18 +48,13 @@ export async function GET() {
       (sum, item) => sum + Number(item.amount || 0),
       0,
     );
-
-    // Category totals
     const categories = {};
-
     expenses.forEach((expense) => {
       const category = expense.category || "Other";
 
       categories[category] =
         (categories[category] || 0) + Number(expense.amount || 0);
     });
-
-    // Top spending category
     let topCategory = "None";
 
     if (Object.keys(categories).length > 0) {
@@ -68,7 +63,6 @@ export async function GET() {
       );
     }
 
-    // Monthly spending
     const monthlyData = {};
 
     expenses.forEach((expense) => {
@@ -103,8 +97,6 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error("Stats API error:", error);
-
     return Response.json(
       {
         success: false,

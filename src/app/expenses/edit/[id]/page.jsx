@@ -22,7 +22,6 @@ export default function EditExpensePage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  // Fetch existing expense
   useEffect(() => {
     if (!id) return;
 
@@ -50,7 +49,6 @@ export default function EditExpensePage() {
           note: expense.note || "",
         });
       } catch (error) {
-        console.error("Failed to load expense:", error);
 
         toast.error("Failed to load expense");
         router.push("/dashboard");
@@ -62,7 +60,6 @@ export default function EditExpensePage() {
     fetchExpense();
   }, [id, router]);
 
-  // Handle input changes
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -70,7 +67,6 @@ export default function EditExpensePage() {
     });
   };
 
-  // Update expense
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -102,7 +98,6 @@ export default function EditExpensePage() {
         toast.error(data.message || "Failed to update expense");
       }
     } catch (error) {
-      console.error("Failed to update expense:", error);
 
       toast.error("Something went wrong");
     } finally {
@@ -110,7 +105,6 @@ export default function EditExpensePage() {
     }
   }
 
-  // Loading state
   if (loading) {
     return <Loading message="Loading expense..." />;
   }
@@ -118,7 +112,6 @@ export default function EditExpensePage() {
   return (
     <main className="min-h-screenbg-[#f7f1e8] dark:bg-neutral-950 px-6 py-10 ">
       <div className="mx-auto max-w-3xl">
-        {/* Back Button */}
 
         <Link
           href="/dashboard"
@@ -147,7 +140,6 @@ export default function EditExpensePage() {
           Back to Dashboard
         </Link>
 
-        {/* Main Card */}
 
         <div
           className="
@@ -160,10 +152,8 @@ export default function EditExpensePage() {
             dark:shadow-none
           "
         >
-          {/* Header */}
 
           <div className="mb-8">
-            {/* Icon */}
 
             <div
               className="
@@ -182,8 +172,6 @@ export default function EditExpensePage() {
               <Pencil size={26} />
             </div>
 
-            {/* Title */}
-
             <h1
               className="
                 text-3xl
@@ -196,20 +184,14 @@ export default function EditExpensePage() {
               Edit Expense
             </h1>
 
-            {/* Description */}
-
             <p className="mt-2 text-gray-500 dark:text-gray-400">
               Update your expense details and keep your finances organized.
             </p>
           </div>
 
-          {/* Form */}
-
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Title + Amount */}
 
             <div className="grid gap-6 sm:grid-cols-2">
-              {/* Expense Title */}
 
               <div>
                 <label
@@ -253,8 +235,6 @@ export default function EditExpensePage() {
                   "
                 />
               </div>
-
-              {/* Amount */}
 
               <div>
                 <label
@@ -302,10 +282,7 @@ export default function EditExpensePage() {
               </div>
             </div>
 
-            {/* Category + Date */}
-
             <div className="grid gap-6 sm:grid-cols-2">
-              {/* Category */}
 
               <div>
                 <label
@@ -357,8 +334,6 @@ export default function EditExpensePage() {
                 </select>
               </div>
 
-              {/* Date */}
-
               <div>
                 <label
                   className="
@@ -401,8 +376,6 @@ export default function EditExpensePage() {
                 />
               </div>
             </div>
-
-            {/* Note */}
 
             <div>
               <label
@@ -447,10 +420,7 @@ export default function EditExpensePage() {
               />
             </div>
 
-            {/* Buttons */}
-
             <div className="flex flex-col-reverse gap-4 pt-2 sm:flex-row sm:justify-end">
-              {/* Cancel */}
 
               <Link
                 href="/dashboard"
@@ -476,8 +446,6 @@ export default function EditExpensePage() {
               >
                 Cancel
               </Link>
-
-              {/* Update */}
 
               <button
                 type="submit"

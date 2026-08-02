@@ -39,7 +39,6 @@ export default function ExpenseChart({ data = [] }) {
         duration: 0.5,
       }}
     >
-      {/* Header */}
 
       <div className="flex items-center justify-between">
         <div>
@@ -52,8 +51,6 @@ export default function ExpenseChart({ data = [] }) {
           </p>
         </div>
       </div>
-
-      {/* Chart */}
 
       {data.length === 0 ? (
         <div className="flex h-75 items-center justify-center">

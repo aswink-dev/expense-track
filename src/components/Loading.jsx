@@ -24,7 +24,6 @@ export default function Loading({ message = "Loading..." }) {
             dark:shadow-none
           "
         >
-          {/* Spinner */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{
@@ -43,8 +42,6 @@ export default function Loading({ message = "Loading..." }) {
               dark:border-t-blue-400
             "
           />
-
-          {/* Message */}
           <p className="mt-5 text-sm font-semibold text-gray-600 dark:text-gray-300">
             {message}
           </p>

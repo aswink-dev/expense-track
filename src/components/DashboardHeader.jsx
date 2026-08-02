@@ -5,7 +5,6 @@ import { Wallet, Sparkles } from "lucide-react";
 export default function DashboardHeader({ user }) {
   return (
     <div>
-      {/* Badge */}
 
       <div
         className="
@@ -28,8 +27,6 @@ export default function DashboardHeader({ user }) {
         <Wallet size={16} />
         Personal Finance Dashboard
       </div>
-
-      {/* Heading */}
 
       <div className="mt-5 flex items-center gap-3">
         <h1
@@ -57,8 +54,6 @@ export default function DashboardHeader({ user }) {
         />
       </div>
 
-      {/* Description */}
-
       <p
         className="
           mt-3
@@ -73,9 +68,6 @@ export default function DashboardHeader({ user }) {
         your habits, and stay in control of your financial goals.
       </p>
 
-      {/* Decorative Line */}
-
-      {/* Decorative Accent */}
       <div className="mt-6 flex items-center gap-1.5">
         <div className="h-1.5 w-25 rounded-full bg-blue-500" />
         <div className="h-1.5 w-5 rounded-full bg-green-500" />

@@ -40,7 +40,6 @@ export default function RegisterPage() {
         setError(data.message || "Unable to create your account");
       }
     } catch (error) {
-      console.error("Registration error:", error);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -50,7 +49,6 @@ export default function RegisterPage() {
   return (
     <main className="min-h-screen bg-[#f7f1e8] px-6 py-10 dark:bg-neutral-950">
       <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-md flex-col justify-center">
-        {/* Back to Home */}
 
         <Link
           href="/"
@@ -79,7 +77,6 @@ export default function RegisterPage() {
           Back to Home
         </Link>
 
-        {/* Register Card */}
 
         <div
           className="
@@ -92,7 +89,6 @@ export default function RegisterPage() {
             dark:shadow-none
           "
         >
-          {/* Logo */}
 
           <div
             className="
@@ -110,8 +106,6 @@ export default function RegisterPage() {
           >
             💰
           </div>
-
-          {/* Heading */}
 
           <div className="mt-6">
             <h1
@@ -139,7 +133,6 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          {/* Error */}
 
           {error && (
             <div
@@ -162,10 +155,7 @@ export default function RegisterPage() {
             </div>
           )}
 
-          {/* Form */}
-
           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-            {/* Name */}
 
             <div>
               <label
@@ -218,8 +208,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Email */}
-
             <div>
               <label
                 htmlFor="email"
@@ -270,8 +258,6 @@ export default function RegisterPage() {
                 "
               />
             </div>
-
-            {/* Password */}
 
             <div>
               <label
@@ -324,8 +310,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Submit */}
-
             <button
               type="submit"
               disabled={loading}
@@ -356,8 +340,6 @@ export default function RegisterPage() {
             </button>
           </form>
 
-          {/* Login */}
-
           <p
             className="
               mt-8
@@ -384,8 +366,6 @@ export default function RegisterPage() {
             </Link>
           </p>
         </div>
-
-        {/* Footer */}
 
         <p
           className="

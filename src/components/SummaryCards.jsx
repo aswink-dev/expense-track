@@ -5,16 +5,13 @@ import { Wallet, Receipt, CalendarDays, Trophy } from "lucide-react";
 import AnimatedCard from "./AnimatedCard";
 
 export default function SummaryCards({ expenses = [] }) {
-  // Total expenses
   const total = expenses.reduce(
     (sum, item) => sum + Number(item.amount || 0),
     0,
   );
 
-  // Number of transactions
   const count = expenses.length;
 
-  // Current month spending
   const now = new Date();
 
   const currentMonth = expenses
@@ -28,7 +25,6 @@ export default function SummaryCards({ expenses = [] }) {
     })
     .reduce((sum, item) => sum + Number(item.amount || 0), 0);
 
-  // Calculate spending by category
   const categories = {};
 
   expenses.forEach((expense) => {
@@ -36,7 +32,6 @@ export default function SummaryCards({ expenses = [] }) {
       (categories[expense.category] || 0) + Number(expense.amount || 0);
   });
 
-  // Find highest spending category
   let topCategory = "None";
 
   if (Object.keys(categories).length > 0) {
@@ -45,7 +40,6 @@ export default function SummaryCards({ expenses = [] }) {
     );
   }
 
-  // Format currency
   const formatCurrency = (amount) => {
     return `₹${amount.toLocaleString("en-IN")}`;
   };
@@ -103,7 +97,6 @@ export default function SummaryCards({ expenses = [] }) {
               "
             >
               <div className="flex items-start justify-between gap-4">
-                {/* Content */}
 
                 <div className="min-w-0">
                   <p
@@ -144,8 +137,6 @@ export default function SummaryCards({ expenses = [] }) {
                   </p>
                 </div>
 
-                {/* Icon */}
-
                 <div
                   className="
                     flex
@@ -168,7 +159,6 @@ export default function SummaryCards({ expenses = [] }) {
                 </div>
               </div>
 
-              {/* Decorative Accent */}
               <div className="mt-6 flex items-center gap-1.5">
                 <div className="h-1.5 w-12 rounded-full bg-blue-500" />
                 <div className="h-1.5 w-3 rounded-full bg-green-500" />

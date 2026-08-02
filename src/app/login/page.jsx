@@ -41,7 +41,6 @@ export default function LoginPage() {
         setError(data.message || "Invalid email or password");
       }
     } catch (error) {
-      console.error("Login error:", error);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -51,7 +50,6 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-[#f7f1e8] px-6 py-10 dark:bg-neutral-950">
       <div className="mx-auto flex min-h-[85vh] max-w-md flex-col justify-center">
-        {/* Back to Home */}
 
         <Link
           href="/"
@@ -80,7 +78,6 @@ export default function LoginPage() {
           Back to Home
         </Link>
 
-        {/* Main Card */}
 
         <div
           className="
@@ -93,7 +90,6 @@ export default function LoginPage() {
             dark:shadow-none
           "
         >
-          {/* Logo */}
 
           <div
             className="
@@ -111,8 +107,6 @@ export default function LoginPage() {
           >
             💰
           </div>
-
-          {/* Heading */}
 
           <div className="mt-6">
             <h1
@@ -140,8 +134,6 @@ export default function LoginPage() {
             </p>
           </div>
 
-          {/* Error */}
-
           {error && (
             <div
               className="
@@ -164,10 +156,7 @@ export default function LoginPage() {
             </div>
           )}
 
-          {/* Form */}
-
           <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-            {/* Email */}
 
             <div>
               <label
@@ -220,8 +209,6 @@ export default function LoginPage() {
               />
             </div>
 
-            {/* Password */}
-
             <div>
               <label
                 htmlFor="password"
@@ -273,8 +260,6 @@ export default function LoginPage() {
               />
             </div>
 
-            {/* Submit */}
-
             <button
               type="submit"
               disabled={loading}
@@ -305,8 +290,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Register */}
-
           <p
             className="
               mt-8
@@ -331,8 +314,6 @@ export default function LoginPage() {
             </Link>
           </p>
         </div>
-
-        {/* Footer */}
 
         <p
           className="

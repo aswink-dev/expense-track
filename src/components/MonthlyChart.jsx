@@ -34,7 +34,6 @@ export default function MonthlyChart({ data = [] }) {
         duration: 0.5,
       }}
     >
-      {/* Header */}
       <div>
         <h2 className="text-lg font-bold text-gray-900 dark:text-white">
           Monthly Spending

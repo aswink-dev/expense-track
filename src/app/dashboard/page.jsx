@@ -31,7 +31,6 @@ export default function DashboardPage() {
           setUser(data.user);
         }
       } catch (error) {
-        console.error("Failed to load user:", error);
       } finally {
         setLoadingUser(false);
       }
@@ -53,7 +52,6 @@ export default function DashboardPage() {
           setStats(data.stats);
         }
       } catch (error) {
-        console.error("Failed to load stats:", error);
       }
     }
 
@@ -62,14 +60,11 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f1e8] dark:bg-neutral-950 text-gray-900  dark:text-white">
-      {/* Navbar */}
 
       <Navbar user={user} loading={loadingUser} />
 
-      {/* Dashboard */}
 
       <section className="mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-10">
-        {/* Header */}
 
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <DashboardHeader user={user} />
@@ -101,17 +96,12 @@ export default function DashboardPage() {
           </Link>
         </div>
 
-        {/* Summary Cards */}
-
         <div className="mt-8">
           <SummaryCards expenses={expenses} />
         </div>
 
-        {/* Charts */}
-
         {stats && (
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {/* Category Chart */}
 
             <div
               className="
@@ -129,7 +119,6 @@ export default function DashboardPage() {
               <ExpenseChart data={stats.categories} />
             </div>
 
-            {/* Monthly Chart */}
 
             <div
               className="
@@ -149,7 +138,6 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Recent Expenses */}
 
         <div
           className="
@@ -164,7 +152,6 @@ export default function DashboardPage() {
             dark:bg-gray-900
           "
         >
-          {/* Section Header */}
 
           <div
             className="
@@ -217,8 +204,6 @@ export default function DashboardPage() {
               Add Expense
             </Link>
           </div>
-
-          {/* Expense List */}
 
           <div className="p-6">
             <ExpenseList expenses={expenses} setExpenses={setExpenses} />

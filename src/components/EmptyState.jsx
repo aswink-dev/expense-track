@@ -28,7 +28,6 @@ export default function EmptyState({
         dark:shadow-none
       "
     >
-      {/* Icon */}
 
       <div
         className="
@@ -49,8 +48,6 @@ export default function EmptyState({
         <Receipt size={30} strokeWidth={1.8} />
       </div>
 
-      {/* Title */}
-
       <h3
         className="
           mt-6
@@ -64,8 +61,6 @@ export default function EmptyState({
         {title}
       </h3>
 
-      {/* Description */}
-
       <p
         className="
           mt-2
@@ -78,8 +73,6 @@ export default function EmptyState({
       >
         {description}
       </p>
-
-      {/* Add Expense Button */}
 
       <Link
         href="/expenses/new"

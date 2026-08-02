@@ -8,7 +8,6 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#f8f7f4] px-6 py-16 dark:bg-neutral-900">
       <div className="w-full max-w-lg text-center">
-        {/* Logo */}
         <Link href="/" className="inline-block">
           <Image
             src="/logo.png"
@@ -19,24 +18,16 @@ export default function NotFound() {
             className="mx-auto h-auto w-[180px]"
           />
         </Link>
-
-        {/* 404 */}
         <p className="mt-4 text-7xl font-black tracking-tight text-blue-500 sm:text-8xl">
           404
         </p>
-
-        {/* Heading */}
         <h1 className="mt-4 text-3xl font-black tracking-tight text-gray-900 dark:text-white sm:text-4xl">
           Page not found
         </h1>
-
-        {/* Description */}
         <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-gray-500 dark:text-gray-400">
           The page you're looking for doesn't exist or may have been moved.
           Let's get you back to your financial dashboard.
         </p>
-
-        {/* Actions */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/"
@@ -89,8 +80,6 @@ export default function NotFound() {
             Go Back
           </button>
         </div>
-
-        {/* Footer */}
         <p className="mt-10 text-xs text-gray-400 dark:text-gray-600">
           ExpenseTrack · Your personal finance companion
         </p>

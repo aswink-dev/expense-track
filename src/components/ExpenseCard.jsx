@@ -72,7 +72,6 @@ export default function ExpenseCard({ expense, setExpenses }) {
         toast.error(data.message || "Failed to delete expense");
       }
     } catch (error) {
-      console.error("Delete expense error:", error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setDeleting(false);
@@ -122,10 +121,8 @@ export default function ExpenseCard({ expense, setExpenses }) {
         dark:shadow-none
       "
     >
-      {/* Left Side */}
 
       <div className="flex min-w-0 items-center gap-4">
-        {/* Category Icon */}
 
         <div
           className={`
@@ -144,8 +141,6 @@ export default function ExpenseCard({ expense, setExpenses }) {
         >
           {category.icon}
         </div>
-
-        {/* Expense Details */}
 
         <div className="min-w-0">
           <h3 className="truncate font-bold text-gray-900 dark:text-white">
@@ -179,20 +174,14 @@ export default function ExpenseCard({ expense, setExpenses }) {
         </div>
       </div>
 
-      {/* Right Side */}
 
       <div className="flex items-center justify-between gap-5 sm:justify-end">
-        {/* Amount */}
 
         <p className="text-lg font-black tracking-tight text-gray-900 dark:text-white">
           ₹{Number(expense.amount).toLocaleString("en-IN")}
         </p>
 
-        {/* Actions */}
-
         <div className="flex items-center gap-2">
-          {/* Edit */}
-
           <Link
             href={`/expenses/edit/${expense._id}`}
             aria-label="Edit expense"
@@ -218,8 +207,6 @@ export default function ExpenseCard({ expense, setExpenses }) {
           >
             <Pencil size={17} />
           </Link>
-
-          {/* Delete */}
 
           <button
             type="button"

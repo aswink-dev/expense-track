@@ -21,7 +21,6 @@ export default function LogoutButton() {
         toast.error(data.message || "Logout failed");
       }
     } catch (error) {
-      console.error("Logout error:", error);
       toast.error("Something went wrong. Please try again.");
     }
   }

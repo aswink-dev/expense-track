@@ -54,7 +54,6 @@ export async function POST(request) {
       },
     );
   } catch (error) {
-    console.error("Create expense error:", error);
 
     return Response.json(
       {
@@ -95,7 +94,6 @@ export async function GET() {
       expenses,
     });
   } catch (error) {
-    console.error(error);
 
     return Response.json(
       {

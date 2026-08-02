@@ -35,14 +35,12 @@ export default function ProfileMenu({ user }) {
       router.push("/login");
       router.refresh();
     } catch (error) {
-      console.error("Logout error:", error);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setLoggingOut(false);
     }
   }
 
-  // Logged-out state
   if (!user) {
     return (
       <div className="flex items-center gap-3">
@@ -94,7 +92,6 @@ export default function ProfileMenu({ user }) {
 
   return (
     <div className="relative w-full md:w-auto">
-      {/* Profile Button */}
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
@@ -129,8 +126,6 @@ export default function ProfileMenu({ user }) {
           </p>
         </div>
       </button>
-
-      {/* Dropdown */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -153,7 +148,6 @@ export default function ProfileMenu({ user }) {
               dark:shadow-none
             "
           >
-            {/* User Information */}
             <div
               className="
                 rounded-2xl
@@ -195,7 +189,6 @@ export default function ProfileMenu({ user }) {
               </div>
             </div>
 
-            {/* Logout Button */}
             <button
               type="button"
               onClick={logout}
