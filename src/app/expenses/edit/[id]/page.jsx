@@ -49,7 +49,6 @@ export default function EditExpensePage() {
           note: expense.note || "",
         });
       } catch (error) {
-
         toast.error("Failed to load expense");
         router.push("/dashboard");
       } finally {
@@ -98,7 +97,6 @@ export default function EditExpensePage() {
         toast.error(data.message || "Failed to update expense");
       }
     } catch (error) {
-
       toast.error("Something went wrong");
     } finally {
       setSaving(false);
@@ -110,9 +108,8 @@ export default function EditExpensePage() {
   }
 
   return (
-    <main className="min-h-screenbg-[#f7f1e8] dark:bg-neutral-950 px-6 py-10 ">
+    <main className="min-h-screen bg-[#f7f1e8] dark:bg-neutral-950 px-6 py-10 ">
       <div className="mx-auto max-w-3xl">
-
         <Link
           href="/dashboard"
           className="
@@ -140,7 +137,6 @@ export default function EditExpensePage() {
           Back to Dashboard
         </Link>
 
-
         <div
           className="
             rounded-3xl
@@ -152,9 +148,7 @@ export default function EditExpensePage() {
             dark:shadow-none
           "
         >
-
           <div className="mb-8">
-
             <div
               className="
                 mb-4
@@ -190,9 +184,7 @@ export default function EditExpensePage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-
             <div className="grid gap-6 sm:grid-cols-2">
-
               <div>
                 <label
                   className="
@@ -283,7 +275,6 @@ export default function EditExpensePage() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
-
               <div>
                 <label
                   className="
@@ -421,7 +412,6 @@ export default function EditExpensePage() {
             </div>
 
             <div className="flex flex-col-reverse gap-4 pt-2 sm:flex-row sm:justify-end">
-
               <Link
                 href="/dashboard"
                 className="

@@ -110,6 +110,13 @@ The layout adapts to different screen sizes while maintaining the same overall v
 
 ```text
 ├── public/
+│   ├── screenshots/
+│   │   ├── dashboard-dark.png
+│   │   ├── dashboard-light.png
+│   │   ├── home-dark.png
+│   │   ├── home-light.png
+│   │   ├── mobile-dark.png
+│   │   └── mobile-light.png
 │   └── logo.png
 ├── src/
 │   ├── app/
@@ -163,7 +170,9 @@ The layout adapts to different screen sizes while maintaining the same overall v
 │   │   ├── ProfileMenu.jsx
 │   │   ├── SummaryCards.jsx
 │   │   ├── ThemeProvider.jsx
-│   │   └── ThemeToggle.jsx
+│   │   ├── ThemeToggle.jsx
+│   │   ├── WelcomeScreen.jsx
+│   │   └── WelcomeWrapper.jsx
 │   ├── lib/
 │   │   ├── auth.js
 │   │   ├── jwt.js
@@ -179,6 +188,7 @@ The layout adapts to different screen sizes while maintaining the same overall v
 ├── package.json
 ├── postcss.config.mjs
 └── README.md
+
 
 ```
 

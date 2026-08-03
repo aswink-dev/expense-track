@@ -65,7 +65,6 @@ export default function AddExpensePage() {
   return (
     <main className="min-h-screen bg-[#f7f1e8] dark:bg-neutral-950 px-6 py-10 ">
       <div className="mx-auto max-w-3xl">
-
         <Link
           href="/dashboard"
           className="
@@ -95,9 +94,7 @@ export default function AddExpensePage() {
 
         <div
           className="
-            overflow-hidden
             rounded-3xl
-            border-gray-200
             p-6
             bg-[#f7f1e8] dark:bg-neutral-900
             shadow-sm
@@ -106,56 +103,42 @@ export default function AddExpensePage() {
             dark:shadow-none
           "
         >
-
-          <div
-            className="
-              border-gray-100
-              px-6
-              py-6
-              sm:px-8
-              dark:border-gray-800
-            "
-          >
-            <div className="flex items-center gap-4">
-              <div
-                className="
-                  flex
-                  h-14
-                  w-14
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-green-500
-                  text-white
-                  shadow-lg
-                "
-              >
-                <Plus size={26} />
-              </div>
-
-              <div>
-                <h1
-                  className="
-                text-3xl
-                font-black
-                tracking-tight
-                text-gray-900
-                dark:text-white
-              "
-                >
-                  Add Expense
-                </h1>
-
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  Record a new expense and keep your finances organized.
-                </p>
-              </div>
+          <div className="mb-8">
+            <div
+              className="
+                          mb-4
+                          flex
+                          h-14
+                          w-14
+                          items-center
+                          justify-center
+                          rounded-2xl
+                          bg-green-500
+                          text-white
+                          shadow-lg
+                        "
+            >
+              <Plus size={26} />
             </div>
+
+            <h1
+              className="
+                          text-3xl
+                          font-black
+                          tracking-tight
+                          text-gray-900
+                          dark:text-white
+                        "
+            >
+              Add Expense
+            </h1>
+
+            <p className="mt-2 text-gray-500 dark:text-gray-400">
+              Record a new expense and keep your finance organized.
+            </p>
           </div>
 
-
-          <form onSubmit={handleSubmit} className="space-y-6 p-6 sm:p-8">
-
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-semibold text-gray-700 dark:text-gray-300">
@@ -225,7 +208,6 @@ export default function AddExpensePage() {
                 />
               </div>
             </div>
-
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
@@ -336,7 +318,6 @@ export default function AddExpensePage() {
                   "
               />
             </div>
-
 
             <div
               className="
