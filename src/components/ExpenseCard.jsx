@@ -17,10 +17,10 @@ const CATEGORY_STYLES = {
     className:
       "bg-blue-50 text-blue-600 dark:bg-blue-950/30 dark:text-blue-400",
   },
-  Transport: {
-    icon: "🚗",
+  Travel: {
+    icon: "✈️",
     className:
-      "bg-purple-50 text-purple-600 dark:bg-purple-950/30 dark:text-purple-400",
+      "bg-cyan-50 text-cyan-600 dark:bg-cyan-950/30 dark:text-cyan-400",
   },
   Entertainment: {
     icon: "🎬",
@@ -34,8 +34,7 @@ const CATEGORY_STYLES = {
   },
   Health: {
     icon: "💊",
-    className:
-      "bg-red-50 text-red-600 dark:bg-red-950/30 dark:text-red-400",
+    className: "bg-red-50 text-red-600 dark:bg-red-950/30 dark:text-red-400",
   },
   Education: {
     icon: "📚",
@@ -44,8 +43,7 @@ const CATEGORY_STYLES = {
   },
   Other: {
     icon: "📦",
-    className:
-      "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400",
+    className: "bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400",
   },
 };
 
@@ -63,9 +61,7 @@ export default function ExpenseCard({ expense, setExpenses }) {
       const data = await res.json();
 
       if (data.success) {
-        setExpenses((prev) =>
-          prev.filter((item) => item._id !== expense._id),
-        );
+        setExpenses((prev) => prev.filter((item) => item._id !== expense._id));
 
         toast.success("Expense deleted successfully");
       } else {
@@ -84,8 +80,7 @@ export default function ExpenseCard({ expense, setExpenses }) {
     year: "numeric",
   });
 
-  const category =
-    CATEGORY_STYLES[expense.category] || CATEGORY_STYLES.Other;
+  const category = CATEGORY_STYLES[expense.category] || CATEGORY_STYLES.Other;
 
   return (
     <motion.div
@@ -121,9 +116,7 @@ export default function ExpenseCard({ expense, setExpenses }) {
         dark:shadow-none
       "
     >
-
       <div className="flex min-w-0 items-center gap-4">
-
         <div
           className={`
             flex
@@ -174,9 +167,7 @@ export default function ExpenseCard({ expense, setExpenses }) {
         </div>
       </div>
 
-
       <div className="flex items-center justify-between gap-5 sm:justify-end">
-
         <p className="text-lg font-black tracking-tight text-gray-900 dark:text-white">
           ₹{Number(expense.amount).toLocaleString("en-IN")}
         </p>
